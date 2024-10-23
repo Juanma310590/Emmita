@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('unnamed.jpg'); /* Reemplaza con la URL de tu imagen de fondo */
+    background-size: cover;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3em;
+    font-family: 'Patrick Hand', cursive;
+    color: #fff;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery img {
+    margin: 10px;
+    max-width: 300px;
+    max-height: 200px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transform: rotate(var(--tilt-angle));
+}
+
+/* Aplicar inclinación aleatoria */
+.tilt {
+    --tilt-angle: calc(5deg * (1 - 2 * random()));
+}
+
+@keyframes random {
+    0% { --tilt-angle: -5deg; }
+    50% { --tilt-angle: 5deg; }
+    100% { --tilt-angle: -5deg; }
+}
+
+.tilt {
+    animation: random 0.5s ease-in-out infinite alternate;
+}
